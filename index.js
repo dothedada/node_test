@@ -10,6 +10,7 @@ const file = {
   ".js": "text/javascript",
   ".gif": "image/gif",
   ".jpeg": "image/jpeg",
+  ".jpg": "image/jpeg",
   ".png": "image/png",
   ".svg": "image/svg+xml",
 };
