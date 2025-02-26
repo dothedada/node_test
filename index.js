@@ -11,6 +11,7 @@ const file = {
   ".gif": "image/gif",
   ".jpeg": "image/jpeg",
   ".png": "image/png",
+  ".svg": "image/svg+xml",
 };
 
 const server = http.createServer(async (request, response) => {
@@ -31,7 +32,7 @@ const server = http.createServer(async (request, response) => {
       const data = await fs.readFile("./public/404.html");
       response.write(data);
     }
-    console.log(err);
+    console.error(err);
     response.end();
   }
 });
