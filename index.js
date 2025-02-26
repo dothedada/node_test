@@ -19,6 +19,8 @@ const server = http.createServer(async (request, response) => {
     fileURL.path === "/"
       ? path.join("./public/", "index.html")
       : path.join("./public/", fileURL.path);
+  const fileOrFolder = path.extname(filePath);
+  console.log("1123123", fileOrFolder);
 
   try {
     const data = await fs.readFile(filePath);
@@ -32,7 +34,7 @@ const server = http.createServer(async (request, response) => {
       const data = await fs.readFile("./public/404.html");
       response.write(data);
     }
-    console.log(err);
+    // console.log(err);
     response.end();
   }
 });
