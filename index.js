@@ -18,20 +18,19 @@ http
     const fileURL = url.parse(request.url);
     const filePath =
       fileURL.path === "/"
-        ? path.join("./", "index.html")
-        : path.join("./", fileURL.path);
+        ? path.join("./public/", "index.html")
+        : path.join("./public/", fileURL.path);
 
     try {
       const data = await fs.readFile(filePath);
       response.writeHead(200, { "content-type": file[path.extname(filePath)] });
-
-      response.end(filePath);
+      response.end(data);
     } catch (err) {
       if (err.code === "ENOENT") {
         response.writeHead(404, "file not found", {
           "content-type": "text/html",
         });
-        const data = await fs.readFile("./error.html");
+        const data = await fs.readFile("./public/error.html");
         response.end(data);
       }
       console.log(err);
