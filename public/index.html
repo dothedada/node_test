@@ -25,11 +25,27 @@
       </ul>
     </nav>
     <h1>Estamos meloooos</h1>
+    <p>Esta es una prueba de servidor en Node para sitios estáticos</p>
+    <img src="assets/Node.js_logo.svg" alt="Logo de Node JS" />
+    <h2>¿Qué es un servidor en Node.js para sitios estáticos?</h2>
     <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-      aspernatur libero, ab, vero, culpa voluptatibus eum maxime sapiente qui
-      voluptate sit sequi accusantium? Deleniti, accusantium animi! Vel debitis
-      ipsam at.
+      Un servidor en Node.js para sitios estáticos es una aplicación ligera que
+      entrega archivos HTML, CSS, JavaScript e imágenes directamente al
+      navegador sin procesamiento adicional. Esto lo convierte en una opción
+      eficiente para servir contenido rápido y seguro.
     </p>
+    <h2>¿Por qué usar Node.js para esto?</h2>
+    <p>
+      Node.js es rápido, escalable y fácil de configurar. Con módulos como http
+      o express, puedes crear un servidor en pocos minutos y manejar peticiones
+      con bajo consumo de recursos.
+    </p>
+    <pre>
+const express = require("express");
+const app = express();
+
+app.use(express.static("public"));
+app.listen(3000, () => console.log("Servidor en http://localhost:3000"));
+    </pre>
   </body>
 </html>
