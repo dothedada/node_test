@@ -7,7 +7,7 @@ const file = {
   ".html": "text/html",
   ".txt": "text/plain",
   ".css": "text/css",
-  ".javascript": "text/javascript",
+  ".js": "text/javascript",
   ".gif": "image/gif",
   ".jpeg": "image/jpeg",
   ".png": "image/png",
@@ -30,12 +30,13 @@ http
         response.writeHead(404, "file not found", {
           "content-type": "text/html",
         });
-        const data = await fs.readFile("./public/error.html");
-        response.end(data);
+        const data = await fs.readFile("./public/404.html");
+        response.write(data);
       }
       console.log(err);
+      response.end();
     }
   })
-  .listen(8000, () => {
-    console.log("server launched at port 8000");
+  .listen(8080, () => {
+    console.log("\n+++++++++++++++++++\nserver launched at port 8080");
   });
